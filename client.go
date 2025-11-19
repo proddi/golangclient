@@ -36,6 +36,7 @@ type Client struct {
 	IPAM       IPAMMethods
 	DHCP       DHCPMethods
 	Umbrella   UmbrellaMethods
+	Contacts   ContactsMethods
 }
 
 // AuthStruct -
@@ -68,6 +69,7 @@ func NewClient(host, username, password string, skipTLSVerify bool) (*Client, er
 	c.IPAM.Client = &c
 	c.DHCP.Client = &c
 	c.Umbrella.Client = &c
+	c.Contacts.Client = &c
 
 	return &c, nil
 }
